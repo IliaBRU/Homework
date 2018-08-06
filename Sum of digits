@@ -1,0 +1,7 @@
+number = int(input('input number'))
+sumnumber = 0
+
+while number != 0:
+  sumnumber = sumnumber + number % 10
+  number //= 10
+print("сумма числа равна - " + str(sumnumber))
