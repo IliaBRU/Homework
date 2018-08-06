@@ -3,8 +3,8 @@ sumnumber = 0
 reversnumber = 0
 
 while number != 0:
-  sumnumber = sumnumber + number % 10
-  reversnumber = reversnumber + number % 10 * 10 ** (len(str(number)) - 1)
+  sumnumber += number % 10
+  reversnumber += number % 10 * 10 ** (len(str(number)) - 1)
   number //= 10
 print("sum of digit - " + str(sumnumber))
 print("revers number - " + str(reversnumber))
