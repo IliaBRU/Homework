@@ -5,9 +5,9 @@
 #8128
 
 for i in range(1, 10000):
-  sumdigits = 0
+  sumnumber = 0
   for j in range(1, i):
     if i%j == 0:
-      sumdigits += j
-  if sumdigits == i:
+      sumnumber += j
+  if sumnumber == i:
     print(i)
