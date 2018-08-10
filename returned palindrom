@@ -2,6 +2,6 @@ def return_palindrom(str_):
   returned_list = []
   words = str_.split()
   for word in words:
-    if hash(word) == hash(word[::-1]):
+    if word == word[::-1]:
       returned_list.append(word)
   return returned_list
