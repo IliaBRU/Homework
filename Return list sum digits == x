@@ -1,0 +1,14 @@
+def return_list_digits(x):
+  numbers = []
+  numbers = [i for i in range(10000, 100000) if int(sum_digits(i)) == x]
+  return numbers
+
+def sum_digits(number):
+  sumnumber = 0
+  reversnumber = 0
+  while number != 0:
+    sumnumber += number % 10
+    reversnumber += number % 10 * 10 ** (len(str(number)) - 1)
+    number //= 10
+  return sumnumber
+
