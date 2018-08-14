@@ -1,0 +1,75 @@
+import os
+
+class files_system:
+    def __init__(self, path_folder, first_index = 0, last_index = 9):
+        self.list_ = []
+        names = os.listdir(path_folder)
+        for name in names:
+            if int(name[0]) >= first_index and int(name[0]) <= last_index:
+                self.list_.append(name)
+        self.list_.sort()
+        with open("f:\\1.txt", "w") as file:
+            for elem in self.list_:
+                file.write(str(elem) + "\n")
+            file.write("All elements = " + str(len(self.list_)))
+
+    def unique_values(self):
+ 
+        unique_values = {}
+        for elem in self.list_:
+            if not elem[0] in unique_values:
+                unique_values[elem[0]] = 0;
+        for elem in self.list_:
+            unique_values[elem[0]] += 1;
+        return print(unique_values)
+
+    def __add__(self, other):
+        
+        assert type(self) == files_system and type(other) == files_system
+        
+        newdict = {}      
+        
+        for elem in self.list_:
+            newdict[elem] = 0
+
+        for elem in other.list_:
+            newdict[elem] = 0
+
+        return newdict.keys()
+
+    def __pos__(self, other):
+        
+        assert type(self) == files_system and type(other) == files_system
+        
+        newdict = {}      
+        
+        for elem in self.list_:
+            newdict[elem] = 0
+
+        for elem in other.list_:
+            newdict[elem] = 0
+
+        return newdict.keys()
+
+    def __eq__(self, other):
+        
+        pass
+
+    def __len__(self):
+        return len(self.list_)
+     
+path = "f:\\homework\pos"
+
+cl1 = files_system(path, 0, 2)
+#cl1.unique_values()
+print(len(cl1))
+cl2 = files_system(path, 2, 3)
+#cl2.unique_values()
+
+#a = cl1 + cl2
+#print(a)
+
+#cl1 += cl2
+#print(cl1)
+
+#print(cl1 == cl2)
