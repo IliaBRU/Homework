@@ -1,0 +1,6 @@
+import time
+while True:
+    time.sleep(1)
+    if time.gmtime()[4] == 0:
+      print("Новая минута")
+      print(time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime()))
